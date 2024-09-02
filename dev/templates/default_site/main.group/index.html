@@ -1,0 +1,145 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+	<section id="work">
+
+		<div class="row">
+
+			<div class="thumb">
+
+				{exp:channel:entries channel="design" limit="1" disable="pagination" status="Featured"}
+
+				<div class="image">
+
+					<a href="{title_permalink='design/'}">
+
+						{design_thumbnail}
+
+						<img src="{design_thumbnail_image}" alt="{design_thumbnail_description}" />
+
+						{/design_thumbnail}
+
+						<div class="more">
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</div>
+
+					</a>
+
+				</div>
+
+				<div class="caption">
+
+					<p>Featured Design</p>
+
+					<h2><a href="{title_permalink='design/'}">{title}</a></h2>
+
+				</div>
+
+				{/exp:channel:entries}
+
+			</div>
+
+			<div class="thumb">
+
+				{exp:channel:entries channel="photography" limit="1" disable="pagination" status="Featured"}
+
+				<div class="image">
+
+					<a href="{title_permalink='photography/'}">
+
+						{photography_thumbnail}
+
+						<img src="{photography_thumbnail_image}" alt="{photography_thumbnail_description}" />
+
+						<div class="more">
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</div>
+
+						{/photography_thumbnail}
+
+					</a>
+
+				</div>
+				
+				<div class="caption">
+
+					<p>Featured Photography</p>
+
+					<h2><a href="{title_permalink='photography/'}">{title}</a></h2>
+
+				</div>
+
+				{/exp:channel:entries}
+
+			</div>
+
+			<div class="thumb">
+
+				{exp:ig_picpuller:media_recent user_id="1" limit="1" use_stale_cache="yes"}
+
+				{if ig_status == "true"}
+
+				<div class="image">
+
+					<a href="/instagrams">
+
+						<img src="{ig_standard_resolution}" alt="{ig_caption}" />
+
+						<div class="more">
+
+							<strong>View More <span>&rarr;</span></strong>
+
+						</div>
+
+					</a>
+
+				</div>
+				
+				<div class="caption">
+
+					<p>Most Recent</p>
+
+					<h2><a href="/instagrams">Instagram</a></h2>
+				
+				</div>
+
+				{/if}
+
+				{if ig_status == "false"}
+
+					<div class="image">
+
+						<a href="#">
+
+							<img src="fallback-instagram.jpg" alt="Fallback Instagram." />
+
+							<div class="more">
+							
+								<strong>View More <span>&rarr;</span></strong>
+							
+							</div>
+
+							<p>Error Type: {ig_error_type}</p>
+
+							<p>Error Message: {ig_error_message}</p>
+
+						</a>
+
+					</div>
+
+				{/if}
+
+				{/exp:ig_picpuller:media_recent}
+
+			</div>
+
+		</div>
+
+	</section>
+
+	{embed="includes/footer"}

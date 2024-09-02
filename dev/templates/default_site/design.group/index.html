@@ -1,0 +1,145 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+		<section class="container" id="work">
+
+			<div class="row stickem-container">
+
+				{exp:switchee variable="{segment_2}" parse="inward"}
+
+					{case value="#^P(\d+)$#|''"}
+
+						{exp:low_reorder:entries set="design_reorder"}
+
+						<div class="thumb">
+		
+							<div class="image">
+		
+								<a href="{title_permalink="design/"}">
+
+									{design_thumbnail}
+
+									<img src="{design_thumbnail_image}" alt="{design_thumbnail_description}" />
+
+									{/design_thumbnail}
+
+									<div class="more">
+
+										<strong>View Work <span>&rarr;</span></strong>
+
+									</div>
+
+								</a>
+		
+							</div>
+
+							<div class="caption">
+
+								<p>{categories}{category_name}{/categories}</p>
+
+								<h2><a href="{title_permalink="design/"}">{title}</a></h2>
+
+							</div>
+
+						</div>
+
+						{/exp:low_reorder:entries}
+
+					{/case}
+
+					{case default="Yes"}
+
+						<div class="overview stickem">
+
+							{exp:channel:entries channel="design" limit="1" disable="pagination" status="Open|Featured"}
+		
+							<h2>{title}</h2>
+
+							{design_overview}
+		
+							<div class="meta">
+
+								<ul>
+
+									{related_entries id="design_client"}
+
+									<li>
+										<strong>Client:</strong> {title}
+									</li>
+
+									{/related_entries}
+
+									{related_entries id="design_creative_director"}
+
+									<li>
+										<strong>Creative Director:</strong> {title}
+									</li>
+
+									{/related_entries}
+
+									{related_entries id="design_copywriter"}
+
+									<li>
+										<strong>Copywriter:</strong> {title}
+									</li>
+
+									{/related_entries}
+
+								</ul>
+		
+							</div>
+
+							{/exp:channel:entries}
+		
+							<div class="navigation">
+
+								{exp:low_reorder:prev_entry set="design_reorder" url_title="{segment_2}"}
+								
+									<div class="prev">
+									
+										<a href="{path='design/{url_title}'}"><span>&larr;</span> Previous</a>
+									
+									</div>
+								
+								{/exp:low_reorder:prev_entry}
+
+								{exp:low_reorder:next_entry set="design_reorder" url_title="{segment_2}"}
+								
+									<div class="next">
+									
+										<a href="{path='design/{url_title}'}">Next <span>&rarr;</span></a>
+									
+									</div>
+								
+								{/exp:low_reorder:next_entry}
+
+							</div>
+		
+						</div>
+		
+						<div class="samples">
+
+							{exp:channel:entries channel="design" limit="1" disable="pagination" status="Open|Featured"}
+
+							<ul id="container">
+								{design_samples}
+								<li>
+									<img src="{design_sample_image}" alt="{design_sample_description}" />
+								</li>
+								{/design_samples}
+							</ul>
+
+							{/exp:channel:entries}
+		
+						</div>
+
+					{/case}
+
+				{/exp:switchee}
+
+			</div>
+
+		</section>
+
+		{embed="includes/footer"}

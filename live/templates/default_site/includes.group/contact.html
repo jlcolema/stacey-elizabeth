@@ -1,0 +1,63 @@
+<section id="contact">
+
+	<div class="row">
+
+		<div class="row-wrap">
+
+			<div class="twitter">
+	
+				<h3>Twitter</h3>
+	
+				{exp:twitter:user screen_name="stacey_mcclure" limit="3"}
+	
+				<div class="tweet">
+					
+					<div class="status">{text}</div>
+					
+					<div class="date">{!-- {relative_date} --}{created_at format="%M %d %g:%i"}</div>	
+					
+				</div>
+	
+				{/exp:twitter:user}
+	
+			</div>
+	
+			<div class="about">
+	
+				<h3>About</h3>
+	
+				<p>{exp:low_variables:single var="about_content"}</p>
+	
+			</div>
+
+		</div>
+
+		<div class="contact">
+
+			<h3 class="toggle">Contact</h3>
+
+			{exp:freeform:form form_name="contact" required="name|email|message" inline_errors="yes" }
+
+				<ol>
+
+					<li>{freeform:field:name attr:placeholder="Name*"}</li>
+					<li>{freeform:field:email attr:placeholder="Email*"}</li>
+					<li>{freeform:field:message attr:placeholder="Message*"}</li>
+
+				</ol>
+
+				<input type="submit" name="submit" value="Send" />
+
+			{/exp:freeform:form}
+
+		</div>
+
+		<div class="top">
+
+			<a href="#header">Back to Top</a>
+
+		</div>
+
+	</div>
+
+</section>

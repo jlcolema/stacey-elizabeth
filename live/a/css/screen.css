@@ -1,0 +1,813 @@
+/*-------------------------------------------
+
+Title: Master styles for screen
+Author: Tune Development
+URL: http://www.tunedevelopment.com
+
+-------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+article, aside, figure, footer, header, hgroup, nav, section, details, summary {
+  display: block; }
+
+img,
+object,
+embed {
+  max-width: 100%; }
+
+html {
+  overflow-y: scroll; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted black;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input,
+select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  word-wrap: break-word; }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+input[type="checkbox"] {
+  vertical-align: bottom; }
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+.ie6 input {
+  vertical-align: text-bottom; }
+
+select,
+input,
+textarea {
+  font: 99% sans-serif; }
+
+table {
+  font-size: inherit;
+  font: 100%; }
+
+td,
+td img {
+  vertical-align: top; }
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif; }
+
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer; }
+
+button,
+input,
+select,
+textarea {
+  margin: 0; }
+
+button {
+  width: auto;
+  overflow: visible; }
+
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+.ie6 html {
+  filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html,
+body {
+  cursor: default; }
+
+code {
+  cursor: text; }
+
+/*
+textarea and input[type="text"] already receive
+"cursor: text" via browsers' base stylesheets
+*/
+a,
+label,
+button,
+input[type="radio"],
+input[type="submit"],
+input[type="checkbox"] {
+  cursor: pointer; }
+
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+article, aside, details, fig caption, figure, footer, header, group, nav, section {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/*-------------------------------------------
+	Layout
+-------------------------------------------*/
+.row {
+  zoom: 1; }
+  .row:before, .row:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .row:after {
+    clear: both; }
+
+/*-------------------------------------------
+	Base
+-------------------------------------------*/
+html {
+  font-size: 62.5%; }
+
+body {
+  padding: 40px 0 0 0;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.46667em;
+  font-weight: 400;
+  font-family: old-standard, Georgia, "Times New Roman", Times, serif;
+  color: #a5a29d;
+  background: #cbc8c4;
+  -webkit-font-smoothing: subpixel-antialiased; }
+  @media only screen and (min-width: 620px) {
+    body {
+      padding: 40px 40px 0 40px; } }
+
+#page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 40px 30px 40px;
+  background: white; }
+  @media only screen and (min-width: 620px) {
+    #page {
+      padding: 40px 40px 50px 40px; } }
+
+select, input, textarea {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.46667em;
+  font-family: old-standard, Georgia, "Times New Roman", Times, serif;
+  color: #a5a29d; }
+
+a {
+  color: #b2c449;
+  text-decoration: none; }
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-weight: normal; }
+
+/*-------------------------------------------
+	Header
+-------------------------------------------*/
+header {
+  margin-bottom: 40px; }
+  @media only screen and (min-width: 760px) {
+    #design.subpage header, #photography.subpage header {
+      margin-bottom: 0; } }
+
+#logo {
+  width: 240px;
+  margin: 0 auto 34px auto;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: all 0.45s;
+  -moz-transition: all 0.45s;
+  -ms-transition: all 0.45s;
+  -o-transition: all 0.45s;
+  transition: all 0.45s; }
+  #logo a {
+    display: block;
+    height: 83px;
+    background: url(/a/img/logo-vertical.png);
+    -webkit-transition: all 0.45s;
+    -moz-transition: all 0.45s;
+    -ms-transition: all 0.45s;
+    -o-transition: all 0.45s;
+    transition: all 0.45s; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      #logo a {
+        background-size: 240px 83px;
+        background-image: url(/a/img/logo-vertical@2x.png); } }
+  @media only screen and (min-width: 640px) {
+    #logo {
+      width: 445px; }
+      #logo a {
+        height: 71px;
+        background: url(/a/img/logo.png); } }
+      @media only screen and (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 640px) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 640px) and (min-device-pixel-ratio: 1.5) {
+        #logo a {
+          background-size: 445px 71px;
+          background-image: url(/a/img/logo@2x.png); } }
+
+nav {
+  border-top: 1px solid #b9b5b0;
+  border-bottom: 1px solid #b9b5b0; }
+  nav .toggle {
+    display: none; }
+    @media only screen and (max-width: 619px) {
+      nav .toggle {
+        display: block;
+        height: 40px;
+        padding: 11px 0 0 0;
+        line-height: 1.26667em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #b2c449;
+        cursor: pointer; }
+        nav .toggle:after {
+          position: relative;
+          top: -1px;
+          content: " +";
+          font-size: 14px;
+          font-size: 1.4rem; }
+        nav .toggle.active {
+          border-bottom: 1px solid #b9b5b0; }
+          nav .toggle.active:after {
+            content: " —"; } }
+  nav ul {
+    text-align: center; }
+    @media only screen and (min-width: 620px) {
+      nav ul {
+        display: block !important; } }
+  nav li {
+    line-height: 1.26667em;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 619px) {
+      nav li {
+        border-bottom: 1px solid #b9b5b0; }
+        nav li:last-child {
+          border: none; } }
+    @media only screen and (min-width: 620px) {
+      nav li {
+        display: inline-block; } }
+  nav a {
+    display: block;
+    height: 40px;
+    padding: 11px 0 0 0;
+    color: #a5a29d;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+    @media only screen and (min-width: 620px) {
+      nav a {
+        padding-left: 20px;
+        padding-right: 20px; } }
+    @media only screen and (min-width: 670px) {
+      nav a {
+        padding-left: 35px;
+        padding-right: 35px; } }
+    @media only screen and (min-width: 750px) {
+      nav a {
+        padding-left: 45px;
+        padding-right: 45px; } }
+    nav a.current, nav a:hover {
+      color: #b2c449; }
+
+/*-------------------------------------------
+	Content
+-------------------------------------------*/
+@media screen and (min-width: 760px) {
+  #design.subpage #work .row, #photography.subpage #work .row {
+    position: relative;
+    padding-right: 320px; } }
+
+.thumb {
+  margin-bottom: 45px; }
+  @media only screen and (min-width: 620px) {
+    .thumb {
+      display: inline-block;
+      width: 30.43478%;
+      margin-left: 4.34783%;
+      margin-right: -4px;
+      vertical-align: top; }
+      .thumb:nth-child(3n + 1) {
+        margin-left: 0; } }
+  .thumb .image a {
+    position: relative;
+    display: block; }
+    .thumb .image a:hover .more {
+      opacity: 1; }
+    .thumb .image a:hover strong {
+      padding-top: 46%;
+      opacity: 1; }
+  .thumb .image img {
+    display: block; }
+  .thumb .image .more {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    background: rgba(178, 196, 73, 0.8);
+    -webkit-transition: all 0.75s;
+    -moz-transition: all 0.75s;
+    -ms-transition: all 0.75s;
+    -o-transition: all 0.75s;
+    transition: all 0.75s;
+    z-index: 5; }
+  .thumb .image strong {
+    padding-top: 65%;
+    display: block;
+    font-size: 17px;
+    font-size: 1.7rem;
+    line-height: 1.11765em;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+    color: white; }
+  .thumb .image span {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 32px;
+    height: 17px;
+    margin-left: 3px;
+    background: url(/a/img/right-arrow-white.png);
+    text-indent: -9999px;
+    white-space: nowrap;
+    overflow: hidden; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      .thumb .image span {
+        background-size: 32px 17px;
+        background-image: url(/a/img/right-arrow-white@2x.png); } }
+  #instagrams .thumb .caption {
+    position: relative;
+    padding: 0 100px 0 0; }
+  .thumb p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-style: italic; }
+  .thumb h2 {
+    line-height: 1.26667em;
+    text-transform: uppercase; }
+    #instagrams .thumb h2 {
+      position: absolute;
+      right: 0;
+      top: 1px;
+      padding: 0 0 0 30px;
+      background: url(/a/img/heart.png) left center no-repeat;
+      z-index: 5; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        #instagrams .thumb h2 {
+          background-size: 18px 15px;
+          background-image: url(/a/img/heart@2x.png); } }
+      #instagrams .thumb h2 strong {
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0; }
+        #instagrams .thumb h2 strong.focusable:active, #instagrams .thumb h2 strong.focusable:focus {
+          position: static;
+          clip: auto;
+          height: auto;
+          width: auto;
+          margin: 0;
+          overflow: visible; }
+
+.overview {
+  margin-bottom: 50px; }
+  @media only screen and (min-width: 760px) {
+    .overview {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px; }
+      .overview .overview-inner {
+        width: 280px;
+        padding-top: 40px;
+        padding-bottom: 50px; } }
+  @media only screen and (max-width: 759px) {
+    .overview .overview-inner {
+      position: static !important; } }
+  .overview h2 {
+    margin-bottom: 10px;
+    line-height: 1.26667em;
+    text-transform: uppercase;
+    color: #b2c449; }
+  .overview p {
+    margin-bottom: 10px; }
+    .overview p:last-of-type {
+      margin: 0; }
+  .overview .meta {
+    margin-top: 15px; }
+    .overview .meta li {
+      font-size: 14px;
+      font-size: 1.4rem;
+      line-height: 1.5em;
+      font-style: italic; }
+    .overview .meta strong {
+      font-weight: normal; }
+    .overview .meta span:after {
+      content: ", "; }
+    .overview .meta span:last-of-type:after {
+      content: none; }
+  .overview .navigation {
+    margin-top: 18px;
+    zoom: 1; }
+    .overview .navigation:before, .overview .navigation:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden; }
+    .overview .navigation:after {
+      clear: both; }
+    @media only screen and (max-width: 619px) {
+      .overview .navigation .prev,
+      .overview .navigation .next {
+        position: fixed;
+        top: 198px;
+        text-indent: -9999px;
+        white-space: nowrap;
+        overflow: hidden;
+        z-index: 5; }
+        .overview .navigation .prev a,
+        .overview .navigation .next a {
+          display: block;
+          width: 40px;
+          height: 80px; } }
+    @media only screen and (min-width: 620px) {
+      .overview .navigation .prev,
+      .overview .navigation .next {
+        font-size: 14px;
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        text-transform: uppercase; }
+        .overview .navigation .prev span,
+        .overview .navigation .next span {
+          position: relative;
+          top: 1px;
+          display: inline-block;
+          width: 32px;
+          height: 17px;
+          text-indent: -9999px;
+          white-space: nowrap;
+          overflow: hidden; } }
+        @media only screen and (min-width: 620px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min-device-pixel-ratio: 1.5) {
+          .overview .navigation .prev span,
+          .overview .navigation .next span {
+            background-size: 32px 17px; } }
+    @media only screen and (max-width: 619px) {
+      .overview .navigation .prev {
+        left: 0; }
+        .overview .navigation .prev a {
+          background: url(/a/img/previous-project.png) no-repeat; } }
+        @media only screen and (max-width: 619px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 619px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 619px) and (min-device-pixel-ratio: 1.5) {
+          .overview .navigation .prev a {
+            background-size: 40px 40px;
+            background-image: url(/a/img/previous-project@2x.png); } }
+    @media only screen and (min-width: 620px) {
+      .overview .navigation .prev {
+        float: left;
+        width: 50%; }
+        .overview .navigation .prev span {
+          margin-right: 7px;
+          background: url(/a/img/left-arrow-green.png); } }
+        @media only screen and (min-width: 620px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min-device-pixel-ratio: 1.5) {
+          .overview .navigation .prev span {
+            background-image: url(/a/img/left-arrow-green@2x.png); } }
+    @media only screen and (max-width: 619px) {
+      .overview .navigation .next {
+        right: 0; }
+        .overview .navigation .next a {
+          background: url(/a/img/next-project.png) no-repeat; } }
+        @media only screen and (max-width: 619px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (max-width: 619px) and (min--moz-device-pixel-ratio: 1.5), only screen and (max-width: 619px) and (min-device-pixel-ratio: 1.5) {
+          .overview .navigation .next a {
+            background-size: 40px 40px;
+            background-image: url(/a/img/next-project@2x.png); } }
+    @media only screen and (min-width: 620px) {
+      .overview .navigation .next {
+        float: right;
+        width: 50%;
+        text-align: right; }
+        .overview .navigation .next span {
+          margin-left: 7px;
+          text-indent: 9999px;
+          background: url(/a/img/right-arrow-green.png); } }
+        @media only screen and (min-width: 620px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min--moz-device-pixel-ratio: 1.5), only screen and (min-width: 620px) and (min-device-pixel-ratio: 1.5) {
+          .overview .navigation .next span {
+            background-image: url(/a/img/right-arrow-green@2x.png); } }
+
+.samples {
+  margin-bottom: 50px; }
+  @media only screen and (min-width: 760px) {
+    .samples {
+      overflow: hidden;
+      padding-top: 40px; } }
+  .samples ul {
+    zoom: 1; }
+    .samples ul:before, .samples ul:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      overflow: hidden; }
+    .samples ul:after {
+      clear: both; }
+  .samples li {
+    margin-bottom: 4px; }
+    .samples li.full {
+      clear: both; }
+    .samples li.left {
+      float: left;
+      width: 50%;
+      padding-right: 2px; }
+    .samples li.right {
+      float: left;
+      width: 50%;
+      padding-left: 2px; }
+  .samples img {
+    display: block; }
+
+#contact {
+  padding-top: 22px;
+  border-top: 1px solid #bbb6b1; }
+  @media screen and (min-width: 620px) {
+    #contact .row-wrap {
+      float: left;
+      width: 50%;
+      padding-right: 20px; } }
+  @media screen and (min-width: 900px) {
+    #contact .row-wrap {
+      float: none;
+      width: auto;
+      padding: 0; } }
+
+@media only screen and (max-width: 619px) {
+  .twitter,
+  .about,
+  .contact {
+    margin-bottom: 20px; } }
+@media only screen and (min-width: 900px) {
+  .twitter,
+  .about,
+  .contact {
+    float: left;
+    width: 30.43478%; } }
+.twitter h3,
+.about h3,
+.contact h3 {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.26667em;
+  color: #b2c449;
+  text-transform: uppercase; }
+  @media only screen and (min-width: 620px) {
+    .twitter h3,
+    .about h3,
+    .contact h3 {
+      margin-bottom: 15px; } }
+
+@media screen and (max-width: 899px) {
+  .twitter {
+    margin-bottom: 25px; } }
+
+.tweet {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5em; }
+  .tweet:last-child {
+    margin: 0; }
+  @media only screen and (max-width: 899px) {
+    .tweet:nth-child(1n) {
+      margin: 0; }
+    .tweet:nth-child(3n), .tweet:nth-child(4n) {
+      display: none; } }
+  .tweet .date {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.46154em;
+    font-style: italic; }
+
+@media only screen and (min-width: 900px) {
+  .about {
+    margin: 0 4.34783%; } }
+.about p {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5em; }
+
+@media only screen and (max-width: 619px) {
+  .contact {
+    margin-bottom: 25px; } }
+@media screen and (min-width: 620px) and (max-width: 899px) {
+  .contact {
+    float: right;
+    width: 50%;
+    padding-left: 20px; } }
+@media only screen and (max-width: 619px) {
+  .contact h3 {
+    cursor: pointer; }
+    .contact h3:after {
+      position: relative;
+      top: -1px;
+      content: " +";
+      font-size: 14px;
+      font-size: 1.4rem; } }
+@media only screen and (max-width: 619px) {
+  .contact.active h3:after {
+    content: " —"; } }
+.contact.active form {
+  display: block; }
+
+form {
+  padding-top: 5px; }
+  @media only screen and (max-width: 619px) {
+    form {
+      display: none; } }
+  form li input,
+  form li textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: 0 0 10px 0;
+    padding: 0 10px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    border: 1px solid #bab6b1;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none; }
+    form li input:active, form li input:focus,
+    form li textarea:active,
+    form li textarea:focus {
+      outline: none;
+      border-color: #b2c449; }
+  form li textarea {
+    max-width: 100%;
+    min-height: 100px;
+    padding: 10px; }
+  form input[type="submit"],
+  form button {
+    height: 40px;
+    padding: 1px 54px 0 10px;
+    color: #b2c449;
+    background: white url(/a/img/submit-arrow.png) right center no-repeat;
+    border: 1px solid #b2c449;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+      form input[type="submit"],
+      form button {
+        background-size: 54px 17px;
+        background-image: url(/a/img/submit-arrow@2x.png); } }
+    form input[type="submit"]:active, form input[type="submit"]:focus, form input[type="submit"]:hover,
+    form button:active,
+    form button:focus,
+    form button:hover {
+      color: white;
+      background-color: #b2c449;
+      background-image: url(/a/img/submit-arrow-hover.png);
+      outline: none; }
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+        form input[type="submit"]:active, form input[type="submit"]:focus, form input[type="submit"]:hover,
+        form button:active,
+        form button:focus,
+        form button:hover {
+          background-size: 54px 17px;
+          background-image: url(/a/img/submit-arrow-hover@2x.png); } }
+
+.top {
+  line-height: 1.26667em;
+  text-transform: uppercase;
+  text-align: center;
+  border-top: 1px solid #b9b5b0;
+  border-bottom: 1px solid #b9b5b0; }
+  @media only screen and (min-width: 620px) {
+    .top {
+      display: none; } }
+  .top a {
+    display: block;
+    height: 40px;
+    padding: 11px 0 0 0;
+    color: #b2c449; }
+
+/*-------------------------------------------
+	Footer
+-------------------------------------------*/
+#copyright {
+  height: 50px;
+  padding: 17px 0 0 0;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1.16667em;
+  font-style: italic;
+  text-align: center; }

@@ -1,0 +1,57 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+		<section id="work">
+
+			<div class="row">
+
+				{exp:ig_picpuller:media_recent user_id="1" limit="9" use_stale_cache="yes"}
+
+				{if ig_status == 'true'}
+
+				<div class="thumb">
+
+					<div class="image">
+
+						<a href="{ig_link}" rel="external">
+
+							<img src="{ig_standard_resolution}" />
+
+							<div class="more">
+
+								<strong>{ig_created_time format="%d %F %Y"} <span>&rarr;</span></strong>
+
+							</div>
+
+						</a>
+
+					</div>
+
+					<div class="caption">
+
+						<p>{ig_caption}</p>
+
+						<h2><strong>Likes:</strong> {ig_likes}</h2>
+
+					</div>
+
+				</div>
+
+				{/if}
+
+				{if ig_status == 'false'}
+
+				<p>Error Type: {ig_error_type}</p>
+
+				<p>Error Message: {ig_error_message}</p>
+
+				{/if}
+
+				{/exp:ig_picpuller:media_recent}
+
+			</div>
+
+		</section>
+
+		{embed="includes/footer"}

@@ -1,0 +1,201 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+		<section id="work">
+
+			<div class="row">
+
+				{exp:switchee variable="{segment_2}" parse="inward"}
+
+					{case value="#^P(\d+)$#|''"}
+
+						{exp:low_reorder:entries set="photography_reorder"}
+
+						<div class="thumb">
+		
+							<div class="image">
+		
+								<a href="{title_permalink="photography/"}">
+
+									{photography_thumbnail wrap="image"}
+
+									<div class="more">
+
+										<strong>View Work <span>&rarr;</span></strong>
+
+									</div>
+
+								</a>
+		
+							</div>
+
+							<div class="caption">
+
+								<p>{categories}{category_name}{/categories}</p>
+
+								<h2><a href="{title_permalink="photography/"}">{title}</a></h2>
+
+							</div>
+
+						</div>
+
+						{/exp:low_reorder:entries}
+
+					{/case}
+
+					{case default="Yes"}
+
+						<div class="overview">
+
+							<div class="overview-inner">
+
+								{exp:channel:entries channel="photography" limit="1" disable="pagination" status="Open|Featured"}
+			
+								<h2>{title}</h2>
+	
+								{photography_overview}
+			
+								<div class="meta">
+			
+									<ul>
+	
+										{photography_client}
+	
+											<li>
+											
+												<strong>Client:</strong> {photography_client:title}
+											
+											</li>
+	
+										{/photography_client}
+	
+										{photography_creative_director limit="1"}
+	
+										<li>
+	
+											<strong>Creative Director:</strong>
+	
+										{/photography_creative_director}
+	
+											{photography_creative_director}
+										
+												<span>{photography_creative_director:title}</span>
+	
+											{/photography_creative_director}
+	
+										{photography_creative_director limit="1"}
+	
+										</li>
+	
+										{/photography_creative_director}
+	
+										{photography_copywriter limit="1"}
+	
+											<li>
+	
+												<strong>Copywriter:</strong>
+	
+										{/photography_copywriter}
+	
+												{photography_copywriter}
+	
+													<span>{photography_copywriter:title}</span>
+	
+												{/photography_copywriter}
+	
+										{photography_copywriter limit="1"}
+	
+											</li>
+	
+										{/photography_copywriter}
+
+										{photography_other limit="1"}
+	
+											<li>
+	
+												<strong>Other:</strong>
+	
+										{/photography_other}
+	
+												{photography_other}
+	
+													<span>{photography_other:title}</span>
+	
+												{/photography_other}
+	
+										{photography_other limit="1"}
+	
+											</li>
+	
+										{/photography_other}
+	
+									</ul>
+			
+								</div>
+	
+								{/exp:channel:entries}
+
+								{!--
+
+								<div class="navigation">
+	
+									{exp:low_reorder:prev_entry set="photography_reorder" loop="yes" url_title="{segment_2}"}
+									
+										<div class="prev">
+										
+											<a href="{path='photography/{url_title}'}"><span>&larr;</span> Previous</a>
+										
+										</div>
+									
+									{/exp:low_reorder:prev_entry}
+	
+									{exp:low_reorder:next_entry set="photography_reorder" loop="yes" url_title="{segment_2}"}
+									
+										<div class="next">
+										
+											<a href="{path='photography/{url_title}'}">Next <span>&rarr;</span></a>
+										
+										</div>
+									
+									{/exp:low_reorder:next_entry}
+	
+								</div>
+
+								--}
+
+							</div>
+
+						</div>
+		
+						<div class="samples">
+
+							{exp:channel:entries channel="photography" limit="1" disable="pagination" status="Open|Featured"}
+
+							<ul id="container">
+
+								{photography_samples}
+
+								<li class="{exp:stringy:lowercase}{photography_sample_width}{/exp:stringy:lowercase}">
+								
+									<img src="{photography_sample_image}" alt="{photography_sample_description}" />
+									
+								</li>
+
+								{/photography_samples}
+
+							</ul>
+		
+							{/exp:channel:entries}
+
+						</div>
+
+					{/case}
+
+				{/exp:switchee}
+
+			</div>
+
+		</section>
+
+		{embed="includes/footer"}

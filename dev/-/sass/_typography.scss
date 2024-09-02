@@ -1,0 +1,138 @@
+
+h1, h2, h3,
+h4, h5, h6 {
+	font-family: $baseheadingfont;
+	font-weight: $baseheadingfontweight;
+	text-rendering: optimizelegibility;
+	}
+
+h1 {
+	@include font-size(24);
+	line-height: (28/24) + em;
+	margin-bottom: ($baselineheight/2) + em;
+	}
+
+h2 {
+	@include font-size(21);
+	line-height: (25/21) + em;
+	margin-bottom: ($baselineheight/2) + em;
+	}
+
+h3 {
+	@include font-size(18);
+	line-height: (22/18) + em;
+	margin-bottom: ($baselineheight/1.5) + em;
+	}
+
+h4 {
+	@include font-size(16);
+	line-height: (20/16) + em;
+	margin-bottom: $baselineheight + em;
+	}
+
+h5 {
+	@include font-size(14);
+	line-height: (18/14) + em;
+	margin-bottom: $baselineheight + em;
+	}
+
+h6 {
+	@include font-size(14);
+	line-height: (18/14) + em;
+	margin-bottom: $baselineheight + em;
+	}
+
+// TYPOGRAPHY ====================================================
+
+p, ol, ul,
+dl, address { margin-bottom: $baselineheight + em; }
+
+small {}
+
+ul, ol {}
+
+// blockquote
+
+blockquote  {
+	// margin: 0 0 $baselineheight #{-$gutterwidth};
+	// padding-left: $gutterwidth;
+	// border-left: 2px solid $bordercolor;
+	// font-family: $altfont;
+	font-style: normal;
+	}
+
+q { quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+	}
+
+cite { font-style: normal; }
+
+// definition lists
+
+dl {}
+
+	dt {}
+
+	dd {}
+
+// text-level
+
+abbr[title] {
+	// border-bottom: 1px dotted $bordercolor;
+	cursor: help;
+	}
+
+b, strong {
+	font-family: $baseheadingfont;
+	font-weight: $baseheadingfontweight;
+	}
+
+i, em {
+	font-family: "FS Truman Web Light Italic", Arial, sans-serif;
+	font-weight: 200;
+	font-style:italic;
+	}
+
+dfn { font-style: italic; }
+
+ins {
+	color: $black;
+	background-color: rgb(252, 215, 0);
+	text-decoration: none;
+	}
+
+mark {
+	color: $black;
+	background-color: rgb(252, 215, 0);
+	font-style: italic;
+	font-weight: normal;
+	}
+
+pre, code,
+kbd, samp {}
+
+del {}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	}
+
+sub,
+sup {
+	position: relative;
+	@include font-size(10);
+	line-height: 0;
+	// vertical-align: $baselineheight;
+	}
+
+sup { top: -.5em; }
+
+sub { bottom: -.5em; }

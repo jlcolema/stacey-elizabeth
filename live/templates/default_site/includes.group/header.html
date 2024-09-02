@@ -1,0 +1,35 @@
+<header id="header" role="banner">
+
+	<h1 id="logo"><a href="/">{site_name}</a></h1>
+
+	<nav>
+
+		<div class="toggle">Menu</div>
+
+		<ul role="navigation">
+
+			<li>
+			
+				<a {if segment_1 == "design"} class="current" {/if} href="/design">Design</a>
+				
+			</li>
+			
+			<li>
+			
+				<a {if segment_1 == "photography"} class="current" {/if} href="/photography">Photography</a>
+				
+			</li>
+			
+			<li>
+			
+				<a {if segment_1 == "instagrams"} class="current" {/if} href="/instagrams">Instagrams</a>
+				
+			</li>
+
+		</ul>
+
+	</nav>
+
+</header>
+
+<div id="content" role="main">

@@ -1,0 +1,374 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+	
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      link.href = link.href.split('?')[0]+'?'+(new Date()).getTime()
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Photography | Stacey Elizabeth McClure</title>
+
+	<meta name="description" content="Design and Photography Portfolio">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<link rel="shortcut icon" href="../-/media/favicon.png">
+	<link rel="apple-touch-icon" href="../-/media/apple-touch-icon.png">
+
+	<meta property="og:title" content="Stacey Elizabeth McClure" />
+	<meta property="og:description" content="Design and Photography Portfolio" />
+	<meta property="og:image" content="../-/media/sem-icon.png" />
+
+	<link type="text/css" href="../-/css/style.css" rel="stylesheet" media="screen, projection" />
+	<link type="text/css" href="../-/css/print.css" rel="stylesheet" media="print" />
+
+	<!--[if lt IE 8]>
+		<link type="text/css" href="../-/css/ie.css" rel="stylesheet" media="screen, projection" />
+	<![endif]-->
+
+	<!--[if IE 8]>
+		<link type="text/css" href="../-/css/ie8.css" rel="stylesheet" media="screen, projection" />
+	<![endif]-->
+
+	<!--[if lte IE 9]>
+		<link type="text/css" href="../-/css/ie9.css" rel="stylesheet" media="screen, projection" />
+	<![endif]-->
+
+	<script type="text/javascript">
+
+		<!--
+
+			document.write('<link type="text/css" href="../-/css/enhanced.css" rel="stylesheet" media="screen, projection" />');
+
+		//-->
+
+	</script>
+
+	<script type="text/javascript" src="//use.typekit.net/pes3zua.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<!--[if lt IE 9]>
+
+		<script src="../-/js/modernizr.js"></script>
+
+		<script src="../-/js/selectivizr.js"></script>
+
+		<script src="../-/js/respond.js"></script>
+
+	<![endif]-->
+
+	<!-- RSS feed -->
+
+	<!-- <link type="application/rss+xml" href="/feed" rel="alternate" title="RSS" /> -->
+
+</head>
+
+<body class="">
+
+<div id="page">
+
+
+
+		<header role="banner" id="top">
+
+		<h1 id="logo"><a href="../index.html">Stacey Elizabeth McClure</a></h1>
+
+		<nav>
+
+			<div class="toggle">Menu</div>
+
+			<ul role="navigation">
+				<li><a href="../design/design.html">Design</a></li>
+				<li class='current'><a class='current' href="photography.html">Photography</a></li>
+				<li><a href="../instagrams/instagrams.html">Instagrams</a></li>
+			</ul>
+
+		</nav>
+
+	</header>
+
+
+	<div class="content" role="main">
+
+		<section id="work">
+
+			<div class="row">
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+				<div class="thumb">
+
+					<div>
+
+						<a href="photography-project.html">
+
+							<img src="../-/media/thumb.jpg" alt="Project Title" />
+
+							<strong>View Work <span>&rarr;</span></strong>
+
+						</a>
+
+					</div>
+
+					<p>Category</p>
+
+					<h2><a href="photography-project.html">Project Title</a></h2>
+
+				</div>
+
+			</div>
+
+		</section>
+
+				<section id="contact">
+
+			<div class="row">
+
+				<div class="twitter">
+
+					<h3>Twitter</h3>
+
+					<div class="tweet">
+
+						<div class="status">
+
+							<a href="#">@username</a> Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#">#hashtag</a>					
+
+						</div>
+						
+						<div class="date">Feb 3</div>
+
+					</div>
+
+					<div class="tweet">
+
+						<div class="status">
+
+							<a href="#">@username</a> Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#">#hashtag</a>					
+
+						</div>
+						
+						<div class="date">Feb 3</div>
+
+					</div>
+
+					<div class="tweet">
+
+						<div class="status">
+
+							<a href="#">@username</a> Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#">#hashtag</a>					
+
+						</div>
+						
+						<div class="date">Feb 3</div>
+
+					</div>
+
+				</div>
+
+				<div class="about">
+
+					<h3>About</h3>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				</div>
+
+				<div class="contact">
+
+					<h3>Contact</h3>
+
+					<form name="" action="" method="">
+
+						<ol>
+
+							<li>
+								<input name="name" type="text" placeholder="Name*" />
+							</li>
+
+							<li>
+								<input name="email" type="text" placeholder="Email*" />
+							</li>
+
+							<li>
+								<textarea name="message" placeholder="Message*"></textarea>
+							</li>
+
+						</ol>
+
+						<button type="submit">Send</button>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+	</div>
+
+	</div>
+
+<footer role="contentinfo">
+
+	<p id="copyright"><small>&copy; 2013 Stacey Elizabeth McClure</small></p>
+
+</footer>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+	<script src="../-/js/functions.js"></script>
+
+	<!--
+
+		Asynchronous google analytics; this is the official snippet.
+		Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
+
+		<script>
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+			_gaq.push(['_setDomainName', 'staceyelizabeth.com']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+			})();
+
+		</script>
+
+	-->
+
+
+</body>
+
+</html>

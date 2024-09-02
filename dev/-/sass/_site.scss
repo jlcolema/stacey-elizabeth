@@ -1,0 +1,843 @@
+
+/*-------------------------------------------
+	Layout
+-------------------------------------------*/
+
+
+section {}
+
+	.row { @include group; }
+
+
+/*-------------------------------------------
+	Base
+-------------------------------------------*/
+
+
+html {
+	font-size: 62.5%;
+	// -webkit-overflow-scrolling: touch;
+	// -webkit-tap-highlight-color: lighten($basecolor, 75%);
+	// -webkit-text-size-adjust: 100%;
+	// -ms-text-size-adjust: 100%;
+	}
+
+body {
+
+	padding: 40px 0 0 0;
+	@include font-size(15);
+	line-height: $baselineheight;
+	font-weight: $basefontweight;
+	font-family: $basefont;
+	color: $secondary-color;
+	background: rgb(203, 200, 196);
+	-webkit-font-smoothing: subpixel-antialiased;
+
+	@include breakpoint(min-width, 620px) { padding: 40px 40px 0 40px; }
+
+}
+
+#page {
+
+	max-width: 920px;
+	margin: 0 auto;
+	padding: 40px 40px 30px 40px;
+	background: $white;
+
+	@include breakpoint(min-width, 620px) { padding: 40px 40px 50px 40px; }
+
+}
+
+select, input, textarea {
+	@include font-size(15);
+	line-height: $baselineheight;
+	font-family: $basefont;
+	color: $secondary-color;
+	}
+
+a {
+
+	color: $primary-color;
+	text-decoration: none;
+
+	// &:link { -webkit-tap-highlight-color: transparent; }
+
+	&:hover {}
+
+}
+
+h1, h2, h3,
+h4, h5, h6 { font-weight: normal; }
+
+::-moz-selection {
+	// color: rgb(255, 255, 255);
+	// background: rgb(252, 215, 0);
+	// text-shadow: none;
+	}
+
+::selection {
+	// color: rgb(255, 255, 255);
+	// background: rgb(252, 215, 0);
+	// text-shadow: none;
+	}
+
+ins {
+	// color: rgb(0, 0, 0);
+	// background-color: rgb(252, 215, 0);
+	// text-decoration: none;
+	}
+
+mark {
+	// color: rgb(0, 0, 0);
+	// background-color: rgb(252, 215, 0);
+	// font-style: italic;
+	// font-weight: bold;
+	}
+
+
+/*-------------------------------------------
+	Header
+-------------------------------------------*/
+
+
+header { margin-bottom: 40px; }
+
+	#logo {
+
+		width: 240px;
+		margin: 0 auto 34px auto;
+		@include hide-text;
+		@include transition(all .45s);
+
+		a {
+
+			display: block;
+			height: 83px;
+			background: url(/-/media/logo-vertical.png);
+			@include transition(all .45s);
+
+			@include retina {
+				background-size: 240px 83px;
+				background-image: url(/-/media/logo-vertical@2x.png);
+				}
+
+		}
+
+		@include breakpoint(min-width, 640px) {
+
+			width: 445px;
+
+			a {
+
+				height: 71px;
+				background: url(/-/media/logo.png);
+
+				@include retina {
+					background-size: 445px 71px;
+					background-image: url(/-/media/logo@2x.png);
+					}
+
+			}
+
+		}
+
+	}
+
+	nav {
+
+		border-top: 1px solid rgb(185, 181, 176);
+		border-bottom: 1px solid rgb(185, 181, 176);
+
+		&.active {
+
+			.toggle {
+			
+				border-bottom: 1px solid rgb(185, 181, 176);
+				
+				&:after { content: " —"; }
+
+			}
+
+			ul { display: block; }
+
+		}
+
+		.toggle {
+
+			display: none;
+
+			@include breakpoint(max-width, 619px) {
+
+				display: block;
+				height: 29px;
+				padding: 11px 0 0 0;
+				line-height: (19/15) + em;
+				text-transform: uppercase;
+				text-align: center;
+				color: $primary-color;
+				cursor: pointer;
+
+				&:after {
+					position: relative;
+					top: -1px;
+					content: " +";
+					@include font-size(14);
+					}
+
+			}			
+			
+		}
+
+		ul {
+		
+			text-align: center;
+		
+			@include breakpoint(max-width, 619px) { display: none; }	
+			
+		}
+
+			li {
+
+				line-height: (19/15) + em;
+				text-transform: uppercase;
+
+				@include breakpoint(max-width, 619px) {
+
+					border-bottom: 1px solid rgb(185, 181, 176);
+
+					&:last-child { border: none; }
+
+				}
+
+				@include breakpoint(min-width, 620px) { display: inline-block; }
+				
+			}
+			
+				a {
+
+					display: block;
+					height: 29px;
+					padding: 11px 0 0 0;
+					color: $secondary-color;
+					@include transition(all .5s);
+
+					@include breakpoint(min-width, 620px) {
+						padding-left: 20px;
+						padding-right: 20px;
+						}
+
+					@include breakpoint(min-width, 670px) {
+						padding-left: 35px;
+						padding-right: 35px;
+						}
+
+					@include breakpoint(min-width, 750px) {
+						padding-left: 45px;
+						padding-right: 45px;
+						}
+
+					&.current,
+					&:hover { color: $primary-color; }
+					
+				}
+
+	}
+
+
+/*-------------------------------------------
+	Content
+-------------------------------------------*/
+
+
+#content {}
+
+	section {}
+
+		#work {}
+
+			.thumb {
+
+				margin-bottom: 45px; // Reduced to account for 5px bottom margin of samples.
+
+				@include breakpoint(min-width, 620px) {				
+
+					display: inline-block;
+					width: flex-grid(1);
+					margin-left: flex-gutter();
+					margin-right: -4px; // Removes 4px gap on inline elements.
+					vertical-align: top;
+
+					&:nth-child(3n + 1) { margin-left: 0; }
+
+				}
+
+				.image {
+	
+					a {
+
+						position: relative;
+						display: block;
+	
+						&:hover {
+
+							img {}
+
+							.more { opacity: 1; }
+
+								strong {
+									padding-top: 46%;
+									opacity: 1;
+									}
+
+						}
+		
+					}
+	
+						img { display: block; }
+	
+						.more {
+							position: absolute;
+							left: 0;
+							top: 0;
+							bottom: 0;
+							width: 100%;
+							opacity: 0;
+							background: rgba($primary-color, .35);
+							@include transition(all .45s);
+							z-index: 5;
+							}
+
+						strong {
+							padding-top: 65%;
+							display: block;
+							@include font-size(17);
+							line-height: (19/17) + em;
+							text-align: center;
+							opacity: 0;
+							@include transition(all .25s);
+							color: $white;
+							}
+	
+							span {
+
+								position: relative;
+								top: 1px;
+								display: inline-block;
+								width: 32px;
+								height: 17px;
+								margin-left: 3px;
+								background: url(/-/media/right-arrow-white.png);
+								@include hide-text;
+
+								@include retina {
+									background-size: 32px 17px;
+									background-image: url(/-/media/right-arrow-white@2x.png);
+									}
+
+							}
+					
+				}
+
+				.caption {
+					
+					#instagrams & {
+						position: relative;
+						padding: 0 100px 0 0;
+						}
+					
+				}
+
+					p {
+						margin-top: 10px;
+						@include font-size(14);
+						line-height: (21/14) + em;
+						font-style: italic;
+						}
+		
+					h2 {
+
+						line-height: (19/15) + em;
+						text-transform: uppercase;
+
+						#instagrams & {
+
+							position: absolute;
+							right: 0;
+							top: 1px;
+							padding: 0 0 0 30px;
+							background: url(/-/media/heart.png) left center no-repeat;
+							z-index: 5;
+
+							@include retina {
+								background-size: 19px 14px;
+								background-image: url(/-/media/heart@2x.png);
+								}
+
+							strong { @include visuallyhidden; }
+
+						}
+		
+						a {
+	
+							&:hover {}
+	
+						}
+						
+					}
+
+			}
+
+			.overview {
+
+				margin-bottom: 50px;
+
+				@include breakpoint(min-width, 760px) {
+					float: right;
+					width: flex-grid(1);
+					}
+
+				h2 {
+					margin-bottom: 10px;
+					line-height: (19/15) + em;
+					text-transform: uppercase;
+					color: $primary-color;
+					}
+				
+				p {
+					
+					margin-bottom: 10px;
+
+					&:last-of-type { margin: 0; }
+
+				}
+				
+				.meta {
+
+					margin-top: 15px;
+
+					ul {}
+					
+						li {
+							@include font-size(14);
+							line-height: (21/14) + em;
+							font-style: italic;
+							}
+						
+							strong { font-weight: normal; }
+
+				}
+				
+				.navigation {
+
+					margin-top: 18px;
+					@include group;
+
+					.prev,
+					.next {
+
+						@include breakpoint(max-width, 619px) {
+
+							position: fixed;
+							top: 50%;
+							margin-top: -40px;
+							@include hide-text;
+							z-index: 5;
+
+							a {
+								display: block;
+								width: 40px;
+								height: 80px;
+								}
+
+						}
+
+						@include breakpoint(min-width, 620px) {
+
+							@include font-size(14);
+							line-height: (21/14) + em;
+							text-transform: uppercase;
+	
+								span {
+								
+									position: relative;
+									top: 1px;
+									display: inline-block;
+									width: 32px;
+									height: 17px;
+									@include hide-text;
+								
+									@include retina { background-size: 32px 17px; }	
+									
+								}
+
+						}
+						
+					}
+
+					.prev {
+
+						@include breakpoint(max-width, 619px) {
+
+							left: 0;
+
+							a {
+							
+								background: url(/-/media/previous-project.png) no-repeat;
+								
+
+								@include retina {
+									background-size: 40px 40px;
+									background-image: url(/-/media/previous-project@2x.png);
+									}
+
+							}
+
+						}
+
+						@include breakpoint(min-width, 620px) {
+
+							float: left;
+							width: 50%;
+
+							span {
+							
+								margin-right: 7px;
+								background: url(/-/media/left-arrow-green.png);
+	
+								@include retina { background-image: url(/-/media/left-arrow-green@2x.png); }
+	
+							}
+
+						}
+
+					}
+					
+					.next {
+
+						@include breakpoint(max-width, 619px) {
+
+							right: 0;
+
+							a {
+							
+								background: url(/-/media/next-project.png) no-repeat;
+								
+
+								@include retina {
+									background-size: 40px 40px;
+									background-image: url(/-/media/next-project@2x.png);
+									}
+
+							}
+
+						}
+
+						@include breakpoint(min-width, 620px) {
+
+							float: right;
+							width: 50%;
+							text-align: right;
+
+							span {
+							
+								margin-left: 7px;
+								background: url(/-/media/right-arrow-green.png);
+							
+								@include retina { background-image: url(/-/media/right-arrow-green@2x.png); }
+								
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+	
+			.samples {
+
+				margin-bottom: 50px;
+
+				@include breakpoint(min-width, 760px) {
+					float: left;
+					width: flex-grid(2);
+					overflow: hidden;
+					margin-right: flex-gutter();
+					}
+
+				ul {
+					width: -webkit-calc(100% + 5px);
+					width: -moz-calc(100% + 5px);
+					width: calc(100% + 5px);
+					@include group;
+					}
+
+					li {
+
+						float: left;
+						margin-right: 5px;
+						margin-bottom: 5px;
+
+						&.full {}
+
+						&.three-fifths {
+							width: -webkit-calc(58% - 5px);
+							width: -moz-calc(58% - 5px);
+							width: calc(58% - 5px);
+							}
+
+						&.two-fifths {
+							width: -webkit-calc(42% - 5px);
+							width: -moz-calc(42% - 5px);
+							width: calc(42% - 5px);
+							}
+
+					}
+
+						img { display: block; }
+
+			}
+
+	// Contact Section
+
+	#contact {
+		padding-top: 22px;
+		border-top: 1px solid rgb(187, 182, 177);
+		}
+
+		.twitter,
+		.about,
+		.contact {
+
+			@include breakpoint(max-width, 619px) { margin-bottom: 20px; }
+
+			@include breakpoint(min-width, 620px) {
+				float: left;
+				width: flex-grid(1);
+				}
+
+			h3 {
+
+				margin-bottom: 5px;
+				@include font-size(15);
+				line-height: (19/15) + em;
+				color: $primary-color;
+				text-transform: uppercase;
+
+				@include breakpoint(min-width, 620px) { margin-bottom: 15px; }
+
+			}
+
+		}
+
+		.twitter {}
+
+			.tweet {
+
+				margin-bottom: 15px;
+				@include font-size(14);
+				line-height: (21/14) + em;
+
+				&:last-child { margin: 0; }
+
+				@include breakpoint(max-width, 619px) {
+
+					&:nth-child(1n) { margin: 0; }
+
+					&:nth-child(3n),
+					&:nth-child(4n) { display: none; }
+
+				}
+			
+				.status {}
+
+					a {
+					
+						&:hover {}
+						
+					}
+
+				.date {
+					@include font-size(13);
+					line-height: (19/13) + em;
+					font-style: italic;
+					}
+			
+			}
+
+		.about {
+
+			@include breakpoint(min-width, 620px) { margin: 0 flex-gutter(); }
+
+			p {
+				@include font-size(14);
+				line-height: (21/14) + em;
+				}
+			
+		}
+
+		.contact {
+
+			@include breakpoint(max-width, 619px) { margin-bottom: 25px; }
+
+			h3 {
+			
+				@include breakpoint(max-width, 619px) {
+
+					cursor: pointer;
+
+					&:after {
+						position: relative;
+						top: -1px;
+						content: " +";
+						@include font-size(14);
+						}					
+
+				}
+
+			}
+
+			&.active {
+
+				h3 {
+					
+					@include breakpoint(max-width, 619px) {
+					
+						&:after { content: " —"; }
+
+					}
+					
+				}
+
+				form { display: block; }
+				
+			}
+
+			h3 {}
+			
+		}
+
+			form {
+
+				@include breakpoint(max-width, 619px) { display: none; }
+
+				padding-top: 5px; // Helper to match vertical alignment with other column text.
+
+				ol {}
+				
+					li {
+					
+						label {}
+						
+						input,
+						textarea {
+
+							@include box-sizing();
+							display: block;
+							width: 100%;
+							height: 40px;
+							margin: 0 0 10px 0;
+							padding: 0 10px;
+							@include font-size(14);
+							line-height: (21/14) + em;
+							border: 1px solid rgb(186, 182, 177);
+							@include rounded(0);
+							-webkit-appearance: none;
+
+							&:active,
+							&:focus {
+								outline: none;
+								border-color: $primary-color;
+								}
+
+						}
+						
+						textarea {
+							max-width: 100%;
+							min-height: 100px;
+							padding: 10px;
+							}
+
+					}
+
+				input[type="submit"],
+				button {
+
+					height: 40px;
+					padding: 1px 54px 0 10px;
+					color: $primary-color;
+					background: $white url(/-/media/submit-arrow.png) right center no-repeat;
+					border: 1px solid $primary-color;
+					@include font-size(14);
+					line-height: (21/14) + em;
+					text-transform: uppercase;
+					@include appearance(none);
+					@include transition(all .35s);
+					@include rounded(0);
+
+					@include retina {
+						background-size: 54px 17px;
+						background-image: url(/-/media/submit-arrow@2x.png);
+						}
+
+					&:active,
+					&:focus,
+					&:hover {
+
+						color: $white;
+						background-color: $primary-color;
+						background-image: url(/-/media/submit-arrow-hover.png);
+						outline: none;
+
+						@include retina {
+							background-size: 54px 17px;
+							background-image: url(/-/media/submit-arrow-hover@2x.png);
+							}
+
+					}
+					
+				}
+			
+			}
+
+		.top {
+
+			line-height: (19/15) + em;
+			text-transform: uppercase;
+			text-align: center;
+			border-top: 1px solid rgb(185, 181, 176);
+			border-bottom: 1px solid rgb(185, 181, 176);
+
+			@include breakpoint(min-width, 620px) { display: none; }
+
+				a {
+	
+					display: block;
+					height: 29px;
+					padding: 11px 0 0 0;
+					color: $primary-color;
+	
+					&:hover {}
+					
+				}
+
+		}
+
+
+/*-------------------------------------------
+	Footer
+-------------------------------------------*/
+
+footer {}
+
+	#copyright {
+		height: 33px;
+		padding: 17px 0 0 0;
+		@include font-size(12);
+		line-height: (14/12) + em;
+		font-style: italic;
+		text-align: center;
+		}
+
+		small {}

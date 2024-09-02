@@ -1,0 +1,197 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+		<section class="container" id="work">
+
+			<div class="row stickem-container">
+
+				{exp:switchee variable="{segment_2}" parse="inward"}
+
+					{case value="#^P(\d+)$#|''"}
+
+						{exp:low_reorder:entries set="design_reorder"}
+
+						<div class="thumb">
+		
+							<div class="image">
+		
+								<a href="{title_permalink="design/"}">
+
+									{design_thumbnail wrap="image"}
+
+									<div class="more">
+
+										<strong>View Work <span>&rarr;</span></strong>
+
+									</div>
+
+								</a>
+		
+							</div>
+
+							<div class="caption">
+
+								<p>{categories}{category_name}{/categories}</p>
+
+								<h2><a href="{title_permalink="design/"}">{title}</a></h2>
+
+							</div>
+
+						</div>
+
+						{/exp:low_reorder:entries}
+
+					{/case}
+
+					{case default="Yes"}
+
+						<div class="overview stickem">
+
+							<div class="overview-inner">
+
+								{exp:channel:entries channel="design" limit="1" disable="pagination" status="Open|Featured"}
+			
+								<h2>{title}</h2>
+	
+								{design_overview}
+	
+								<div class="meta">
+	
+									<ul>
+	
+										{design_client}
+	
+											<li>
+											
+												<strong>Client:</strong> {design_client:title}
+											
+											</li>
+	
+										{/design_client}
+	
+										{design_creative_director limit="1"}
+	
+										<li>
+	
+											<strong>Creative Director:</strong>
+	
+										{/design_creative_director}
+	
+											{design_creative_director}
+										
+												<span>{design_creative_director:title}</span>
+	
+											{/design_creative_director}
+	
+										{design_creative_director limit="1"}
+	
+										</li>
+	
+										{/design_creative_director}
+	
+										{design_copywriter limit="1"}
+	
+											<li>
+	
+												<strong>Copywriter:</strong>
+	
+										{/design_copywriter}
+	
+												{design_copywriter}
+	
+													<span>{design_copywriter:title}</span>
+	
+												{/design_copywriter}
+	
+										{design_copywriter limit="1"}
+	
+											</li>
+	
+										{/design_copywriter}
+
+										{design_other limit="1"}
+	
+											<li>
+	
+												<strong>Other:</strong>
+	
+										{/design_other}
+	
+												{design_other}
+	
+													<span>{design_other:title}</span>
+	
+												{/design_other}
+	
+										{design_other limit="1"}
+	
+											</li>
+	
+										{/design_other}
+
+									</ul>
+			
+								</div>
+	
+								{/exp:channel:entries}
+			
+								<div class="navigation">
+	
+									{exp:low_reorder:prev_entry set="design_reorder" loop="yes" url_title="{segment_2}"}
+									
+										<div class="prev">
+										
+											<a href="{path='design/{url_title}'}"><span>&larr;</span> Previous</a>
+										
+										</div>
+									
+									{/exp:low_reorder:prev_entry}
+	
+									{exp:low_reorder:next_entry set="design_reorder" loop="yes" url_title="{segment_2}"}
+									
+										<div class="next">
+										
+											<a href="{path='design/{url_title}'}">Next <span>&rarr;</span></a>
+										
+										</div>
+									
+									{/exp:low_reorder:next_entry}
+	
+								</div>
+
+							</div>
+
+						</div>
+		
+						<div class="samples">
+
+							{exp:channel:entries channel="design" limit="1" disable="pagination" status="Open|Featured"}
+
+							<ul id="container">
+
+								{design_samples}
+
+								<li class="{exp:stringy:lowercase}{design_sample_width}{/exp:stringy:lowercase}">
+
+									<img src="{design_sample_image}" alt="{design_sample_description}" />
+
+								</li>
+
+								{/design_samples}
+
+							</ul>
+
+							{/exp:channel:entries}
+		
+						</div>
+
+					{/case}
+
+				{/exp:switchee}
+
+			</div>
+
+		</section>
+
+		{embed="includes/footer"}
